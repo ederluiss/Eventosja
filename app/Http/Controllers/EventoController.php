@@ -50,13 +50,12 @@ class EventoController extends Controller
     public function show($evento)
     {
         $convidado = DB::table('convidados')
-        ->join('convites', 'convites.id_convidado', '=', 'convidados.id')
-        ->join('eventos', 'eventos.id', '=', 'convites.id_evento')
-        ->where('eventos.id', '=', $evento)
-        ->get();
+            ->join('convites', 'convites.id_convidado', '=', 'convidados.id')
+            ->join('eventos', 'eventos.id', '=', 'convites.id_evento')
+            ->where('eventos.id', '=', $evento)
+            ->get();
         //dd($convidado);       
-        return view('convidados.show', ['convidados' =>$convidado, 'evento'=>$evento]);
-
+        return view('convidados.show', ['convidados' => $convidado, 'evento' => $evento]);
     }
 
     /**
@@ -67,7 +66,7 @@ class EventoController extends Controller
      */
     public function edit(Evento $evento)
     {
-        return view('eventos.edit', ['evento'=>$evento]);
+        return view('eventos.edit', ['evento' => $evento]);
     }
 
     /**
@@ -94,5 +93,4 @@ class EventoController extends Controller
         $evento->delete();
         return redirect()->route('eventos.index');
     }
-
 }

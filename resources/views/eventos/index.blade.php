@@ -22,14 +22,10 @@
                         <td>{{ $evento->status ? 'Concluída' : 'Aberta'  }}</td>
                         <td>
                             <a href="{{ route('eventos.show', ['evento' => $evento->id]) }}" class="btn btn-sm btn-primary">Ver</a>
-                            <a
-                                href="{{ route('eventos.edit', ['task' => $task->id]) }}"
-                                class="btn btn-sm btn-primary">
+                            <a href="{{ route('eventos.edit', ['task' => $task->id]) }}" class="btn btn-sm btn-primary">
                                 Editar
                             </a>
-                            <form
-                                style="display: inline;"
-                                action="{{ route('eventos.destroy', ['task' => $task->id]) }}" method="POST">
+                            <form style="display: inline;" action="{{ route('eventos.destroy', ['task' => $task->id]) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-sm btn-danger">deletar</button>
@@ -40,11 +36,9 @@
                 </tbody>
             </table>
         </div>
-
         <div class="col-md-12">
             {{ $tasks->links() }}
         </div>
-
     </div>
 </div>
 @endsection

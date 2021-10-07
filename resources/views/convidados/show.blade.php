@@ -21,9 +21,7 @@
                         <td>{{ $convidado->nome }}</td>
                         <td>{{ $convidado->email }}</td>
                         <td>
-                            <form
-                                style="display: inline;"
-                                action="{{ route('convidados.destroy', ['convidado' => $convidado->id]) }}" method="POST">
+                            <form style="display: inline;" action="{{ route('convidados.destroy', ['convidado' => $convidado->id]) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-sm btn-danger">deletar</button>
@@ -34,7 +32,6 @@
                 </tbody>
             </table>
         </div>
-
         <div class="col-md-12">
             <a href="{{ route('convidados.index') }}" class="btn btn-sm btn-secondary">Voltar</a>
         </div>

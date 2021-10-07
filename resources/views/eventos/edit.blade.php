@@ -11,12 +11,10 @@
                     <label for="name">Descrição</label>
                     <input class="form-control" id="descricao" name="descricao" value="{{ $evento->descricao }}" />
                 </div>
-
                 <div class="form-group">
                     <label for="name">Data</label>
                     <input class="form-control" id="data" name="data" value="{{ $evento->data_evento }}" />
                 </div>
-               
                 <button style="display: inline;" type="submit" class="btn btn-sm btn-success">Atualizar</button>
             </form>
         </div>

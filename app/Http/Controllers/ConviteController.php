@@ -26,12 +26,12 @@ class ConviteController extends Controller
     public function create(Request $request)
     {
         // $convidado = DB::table('convidados')->get();
-  
+
         // dd($request->evento);  
         $convidados = \App\Models\Convidado::All();
-       // dd($convidados);
-       //dd($request->evento);  
-        return view('convites.create', ['convidados' =>$convidados, 'evento'=>$request->evento]);
+        // dd($convidados);
+        //dd($request->evento);  
+        return view('convites.create', ['convidados' => $convidados, 'evento' => $request->evento]);
 
         //return view('convites.create');
     }
@@ -56,7 +56,7 @@ class ConviteController extends Controller
      */
     public function show(Convite $convite)
     {
-        return view('convites.show', ['convite' =>$convite]);
+        return view('convites.show', ['convite' => $convite]);
     }
 
     /**
@@ -67,7 +67,7 @@ class ConviteController extends Controller
      */
     public function edit(Convite $convite)
     {
-        return view('convites.edit', ['convite'=>$convite]);
+        return view('convites.edit', ['convite' => $convite]);
     }
 
     /**

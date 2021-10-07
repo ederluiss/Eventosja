@@ -11,12 +11,10 @@
                     <label for="name">Nome</label>
                     <input class="form-control" id="nome" name="nome" value="{{ $convite->nome }}" />
                 </div>
-
                 <div class="form-group">
                     <label for="name">E-mail</label>
                     <input class="form-control" id="email" name="email" value="{{ $convite->email }}" />
                 </div>
-               
                 <button style="display: inline;" type="submit" class="btn btn-sm btn-success">Atualizar</button>
             </form>
         </div>

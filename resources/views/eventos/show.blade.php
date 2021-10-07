@@ -18,7 +18,6 @@
                 </tbody>
             </table>
         </div>
-
         <div class="col-md-12">
             <a href="{{ route('eventos.index') }}" class="btn btn-sm btn-secondary">Voltar</a>
             <a href="{{ route('eventos.edit', ['evento' => $evento->id]) }}" class="btn btn-sm btn-secondary">Editar</a>

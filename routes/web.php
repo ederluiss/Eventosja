@@ -15,14 +15,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', [EventoController::class, 'index']);
-
 Route::get('eventos/search', [ConviteController::class, 'search'])->name('eventos.search');
-
 Route::resource('eventos', EventoController::class);
 Route::resource('convidados', ConvidadoController::class);
 Route::resource('convites', ConviteController::class);
-
-Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

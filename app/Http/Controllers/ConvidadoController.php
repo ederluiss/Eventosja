@@ -48,7 +48,7 @@ class ConvidadoController extends Controller
      */
     public function show(Convidado $convidado)
     {
-        return view('convidados.show', ['convidado' =>$convidado]);
+        return view('convidados.show', ['convidado' => $convidado]);
     }
 
     /**
@@ -59,7 +59,7 @@ class ConvidadoController extends Controller
      */
     public function edit(Convidado $convidado)
     {
-        return view('convidados.edit', ['convidado'=>$convidado]);
+        return view('convidados.edit', ['convidado' => $convidado]);
     }
 
     /**
