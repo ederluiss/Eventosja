@@ -38,6 +38,7 @@ class EventoController extends Controller
     public function store(Request $request)
     {
         Evento::create($request->all());
+        session()->flash('mensagem','Evento cadastrado com sucesso!');
         return redirect()->route('eventos.index');
     }
 
@@ -53,8 +54,7 @@ class EventoController extends Controller
             ->join('convites', 'convites.id_convidado', '=', 'convidados.id')
             ->join('eventos', 'eventos.id', '=', 'convites.id_evento')
             ->where('eventos.id', '=', $evento)
-            ->get();
-        //dd($convidado);       
+            ->get();    
         return view('convidados.show', ['convidados' => $convidado, 'evento' => $evento]);
     }
 

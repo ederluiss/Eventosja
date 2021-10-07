@@ -25,15 +25,8 @@ class ConviteController extends Controller
      */
     public function create(Request $request)
     {
-        // $convidado = DB::table('convidados')->get();
-
-        // dd($request->evento);  
-        $convidados = \App\Models\Convidado::All();
-        // dd($convidados);
-        //dd($request->evento);  
+        $convidados = \App\Models\Convidado::All(); 
         return view('convites.create', ['convidados' => $convidados, 'evento' => $request->evento]);
-
-        //return view('convites.create');
     }
 
     /**
@@ -45,6 +38,7 @@ class ConviteController extends Controller
     public function store(Request $request)
     {
         Convite::create($request->all('id_convidado', 'id_evento'));
+        session()->flash('mensagem','Convite cadastrado com sucesso!');
         return redirect()->route('eventos.index');
     }
 

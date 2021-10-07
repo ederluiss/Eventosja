@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Convidado;
 use Illuminate\Http\Request;
+use Session;
+
 
 class ConvidadoController extends Controller
 {
@@ -37,7 +39,9 @@ class ConvidadoController extends Controller
     public function store(Request $request)
     {
         Convidado::create($request->all());
+        session()->flash('mensagem','Convidado cadastrado com sucesso!');
         return redirect()->route('convidados.index');
+        
     }
 
     /**

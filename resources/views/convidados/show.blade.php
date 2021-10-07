@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
-            <h2 class="mb-5">Lista de Convidados do Evento {{$evento}}<a href="{{ route('convites.create', ['evento' => $evento]) }}" class="btn btn-sm btn-primary">Novo Convidado</a></h2>
+            <h2 class="mb-5">Lista de Convidados do Evento {{$evento ?? ''}}<a href="{{ route('convites.create', ['evento' => $evento ?? '']) }}" class="btn btn-sm btn-primary">Novo Convidado</a></h2>
             <table class="table table-hover">
                 <thead>
                     <tr>
